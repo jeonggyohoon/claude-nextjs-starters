@@ -1,0 +1,18 @@
+import { Metadata } from 'next';
+
+import { LoginForm } from '@/components/features/auth/LoginForm';
+
+export const metadata: Metadata = {
+  title: '로그인',
+  description: '계정에 로그인하세요',
+};
+
+export default function LoginPage() {
+  return (
+    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
+      <div className="w-full max-w-sm">
+        <LoginForm />
+      </div>
+    </div>
+  );
+}
