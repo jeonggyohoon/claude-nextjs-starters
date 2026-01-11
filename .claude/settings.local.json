@@ -12,13 +12,24 @@
     "playwright"
   ],
   "hooks": {
-    "PreToolUse": [
+    "Notification": [
       {
-        "matcher": "Bash",
+        "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -Command \"'테스트 훅 !' | Out-File -Append -Encoding UTF8 ./hook-test.txt\""
+            "command": "bash ./.claude/hooks/notification-hook.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ./.claude/hooks/stop-hook.sh"
           }
         ]
       }
