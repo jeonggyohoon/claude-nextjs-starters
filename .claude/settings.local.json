@@ -7,8 +7,21 @@
       "mcp__playwright"
     ]
   },
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "playwright"
   ],
-  "enableAllProjectMcpServers": true
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -Command \"'테스트 훅 !' | Out-File -Append -Encoding UTF8 ./hook-test.txt\""
+          }
+        ]
+      }
+    ]
+  }
 }
