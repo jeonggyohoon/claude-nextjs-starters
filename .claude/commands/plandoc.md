@@ -19,12 +19,17 @@ Phase 단위로 독립 실행 및 테스트 가능한 기획/설계 문서를 �
 
 ```
 /plandoc feature <기능명>
-/plandoc feature <기능명> --phases 4
+/plandoc feature <기능명> --phases <1-5>
 /plandoc sprint <스프린트명>
 /plandoc architecture <시스템명>
 /plandoc db <스키마명>
 /plandoc api <API명>
 ```
+
+### --phases 옵션
+- 최소 1개 (MVP만)
+- 권장 3개 (기본값)
+- 최대 5개 (복잡한 기능)
 
 ## Phase 설계 원칙
 
@@ -246,3 +251,14 @@ author:
 - 각 Phase는 **독립적으로 테스트 가능**하게 설계
 - TODO 체크박스로 진행상황 추적
 - Phase 완료 조건은 **구체적이고 검증 가능**하게 작성
+
+## 예외 상황 처리
+
+### plans 폴더가 없음
+- 자동으로 `plans/` 및 하위 폴더 생성
+
+### 동일 이름 문서 존재
+- 기존 문서 표시 후 덮어쓰기/버전 추가 선택
+
+### 잘못된 Phase 번호
+- 1-5 범위 외 입력 시 기본값(3) 사용 안내
